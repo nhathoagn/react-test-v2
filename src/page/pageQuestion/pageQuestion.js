@@ -4,7 +4,7 @@ import {Button, Steps, message, Radio} from "antd";
 import axios from "axios";
 import QuestionPage from "../../conponents/question/question";
 import {useDispatch, useSelector} from "react-redux";
-import {selectAllQuestion} from "../../store/slices/questions/question";
+import {saveAnwser, selectAllQuestion} from "../../store/slices/questions/question";
 const { Step } = Steps;
 const steps = [
     {
@@ -48,6 +48,7 @@ const PageQuestion = ({data} = []) => {
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
+        dispatch(saveAnwser(value))
     };
 
     const [current, setCurrent] = useState(0);

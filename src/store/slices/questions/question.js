@@ -20,6 +20,6 @@ const QuestionSlice = createSlice({
     }
 })
 
-export const { getQuestions } = QuestionSlice.actions;
+export const { saveAnwser } = QuestionSlice.actions;
 export const selectAllQuestion = (state) => state.questions;
 export default QuestionSlice.reducer;
