@@ -1,0 +1,17 @@
+.container-anwser{
+    display: flex;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 40%;
+    margin-left: 34%;
+}
+.anwser{
+    padding-top: 11px;
+    margin-left: 2%;
+}
+.container-anwser .choose{
+    margin-left: 1%;
+}
+.container-question{
+}
+

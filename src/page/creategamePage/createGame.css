@@ -1,0 +1,19 @@
+.container-creategame{
+    margin-top: 10%;
+    position: relative;
+    left: 20%;
+}
+.invite-player{
+    width: 50%;
+}
+.Label-game{
+    width: 50%;
+}
+.hr-game{
+    width: 76%;
+    margin-left: 228px;
+}
+.Label-game p{
+    font-size: 23px;
+    margin-right: 32%;
+}
