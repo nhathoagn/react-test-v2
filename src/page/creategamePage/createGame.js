@@ -3,26 +3,24 @@ import {Button, Checkbox, Form, Input} from "antd";
 import './createGame.css'
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {playerAdd} from "../../store/slices/playerSlice/player";
+import {startGame} from "../../store/slices/game.slices";
 const CreateGame = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [count, setCount] = useState(1);
-
     const onFinish = (values) => {
         console.log('Success:', values);
         if (values){
-            dispatch(playerAdd(count,values))
-            navigate('/loading')
+            dispatch(startGame(values))
+            localStorage.setItem("round",1)
+            navigate('/mathPage')
+
         }
-        setCount(count + 1)
-
-
     };
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
   return(
       <div className="container-creategame">
           <div className="Label-game">

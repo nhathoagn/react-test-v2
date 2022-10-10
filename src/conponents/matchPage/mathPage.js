@@ -1,39 +1,26 @@
 import React, {useEffect, useState} from "react";
-import {createSearchParams, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import './mathPage.css'
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
-import {getQuestions} from "../../store/slices/questions/question";
-import {selectAllPlayers} from "../../store/slices/playerSlice/player";
-import PageQuestion from "../../page/pageQuestion/pageQuestion";
+import {GAME} from "../../utils/constants";
 const Loading = () => {
     const navigate = useNavigate();
     const dispath = useDispatch()
-    const player = useSelector(selectAllPlayers)
-    const [dataRes,setDatares] = useState([])
-    const player1 = []
-    player.map( index => {
-        player1.push(index.player.player1)
-    })
+    const [round,setRound] = useState()
+    const Isgame = useSelector((state) => state.gameSlices.state)
     useEffect(()=>{
-        axios.get('https://opentdb.com/api.php?amount=2&type=multiple').then( ( res)=>{
-            console.log(0,res.data.results)
-            setDatares(res.data.results)
-        })
-            .catch( e =>{
-                console.log(e)
-            })
-    // if ( player){
-    //     localStorage.setItem("player1",player1)
-    //     setTimeout(()=>{
-    //         navigate('/pageQuestions')
-    //     },10000)
-    // }
+        if (localStorage.getItem("round")){
+         setRound(localStorage.getItem("round"))
+        }
     },[])
-    console.log("data",dataRes)
+    useEffect( ()=>{
+        if (Isgame === GAME){
+            navigate('/pageQuestions')
+        }
+    },[])
   return(
       <div className="container-loading">
-          {dataRes.length <= 0 ? <p className="title">Match</p> : <PageQuestion  data = {dataRes}/>}
+           <p className="title">Match {round}</p>
 
       </div>
   )

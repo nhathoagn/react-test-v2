@@ -6,6 +6,7 @@ import CreateGame from "./page/creategamePage/createGame";
 import Loading from "./conponents/matchPage/mathPage";
 import PageQuestion from "./page/pageQuestion/pageQuestion";
 import QuestionPage from "./conponents/question/question";
+import MathPage from "./conponents/matchPage/mathPage";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
      <BrowserRouter>
      <Routes>
          <Route path="/" element={<HomePage/>}/>
+         <Route path="/mathpage" element={<MathPage/>}></Route>
          <Route path="/creategame" element={<CreateGame/>}/>
          <Route path="/loading" element={<Loading/>}/>
          <Route path="/pageQuestions" element={<PageQuestion/>}/>
-         <Route path="/nhathoang" element={<QuestionPage/>}/>
+         {/*<Route path="/nhathoang" element={<QuestionPage/>}/>*/}
      </Routes>
     </BrowserRouter>
     </div>
