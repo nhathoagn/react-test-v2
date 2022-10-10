@@ -1,5 +1,6 @@
 import { take, race, delay, put } from 'redux-saga/effects';
 import {answerQuestion, fetchQuestionSuccess, nextQuestion} from "../slices/quiz.slice";
+import { finishGame }  from '../slices/game.slices'
 function* answersSaga() {
     for (let i =0; i < 3 ; i++){
         yield take(answerQuestion.type)

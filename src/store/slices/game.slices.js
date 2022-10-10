@@ -17,9 +17,6 @@ const gameState = createSlice({
             state.username = action.payload;
             state.state = FETCHING_GAME_DATA
         },
-        cancelFetchQuestions(state){
-            state.stage = START_GAME
-        },
         finishGame(state){
             state.stage = END_GAME
         }
@@ -35,6 +32,9 @@ const gameState = createSlice({
     }
 });
 export const {
-  startGame
+  startGame,
+    cancelFetchQuestions,
+    finishGame,
+    restartGame,
 } = gameState.actions
 export default gameState.reducer

@@ -8,6 +8,7 @@ const Loading = () => {
     const dispath = useDispatch()
     const [round,setRound] = useState()
     const Isgame = useSelector((state) => state.gameSlices.state)
+    console.log("state",Isgame)
     useEffect(()=>{
         if (localStorage.getItem("round")){
          setRound(localStorage.getItem("round"))

@@ -18,7 +18,6 @@ function App() {
          <Route path="/creategame" element={<CreateGame/>}/>
          <Route path="/loading" element={<Loading/>}/>
          <Route path="/pageQuestions" element={<PageQuestion/>}/>
-         {/*<Route path="/nhathoang" element={<QuestionPage/>}/>*/}
      </Routes>
     </BrowserRouter>
     </div>
